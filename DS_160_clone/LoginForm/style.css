@@ -1,0 +1,15 @@
+.tooltip-inner {
+  background-color: #a09d9d !important;
+  color: black !important;
+  border: 1px solid #d1d5db !important; 
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before,
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before,
+.tooltip.bs-tooltip-start .tooltip-arrow::before,
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-top-color: #a09d9d !important;
+  border-bottom-color: white !important;
+  border-left-color: white !important;
+  border-right-color: white !important;
+}

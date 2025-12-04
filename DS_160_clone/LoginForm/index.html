@@ -1,0 +1,3458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wizard Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body class="bg-gray-100 font-sans text-sm">
+    <nav class="bg-blue-900 text-white py-3 px-5">
+      <div class="container mx-auto flex justify-end">
+        <ul class="flex space-x-6">
+          <li class="cursor-pointer hover:underline">Contact Us</li>
+          <li class="cursor-pointer hover:underline">Help</li>
+          <li class="cursor-pointer hover:underline">Exit</li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="w-full bg-[#e7edf3] border-y border-gray-400">
+  <div class="max-w-screen-xl mx-auto flex justify-between text-gray-800 text-sm font-semibold" id="top-tabs">
+    <div data-tab="complete" class="tab flex-1 text-center py-2 border-r border-gray-400 active-tab">
+      COMPLETE
+    </div>
+    <div data-tab="photo" class="tab flex-1 text-center py-2 border-r border-gray-400">
+      PHOTO
+    </div>
+    <div data-tab="review" class="tab flex-1 text-center py-2 border-r border-gray-400">
+      REVIEW
+    </div>
+    <div data-tab="sign" class="tab flex-1 text-center py-2">
+      SIGN
+    </div>
+  </div>
+</div>
+
+
+    <div
+      class="container mx-auto my-5 grid grid-cols-1 lg:grid-cols-4 gap-0 min-h-screen"
+    >
+    <!-- Sidebar -->
+<aside class="bg-gradient-to-b from-blue-500 via-blue-700 to-blue-900 text-white px-4 py-6 lg:rounded-l-lg">
+  <h1 class="text-lg font-bold mb-4 text-blue-200">DS-160 Application</h1>
+  <ul class="space-y-2 text-sm font-medium text-blue-100">
+
+    <!-- Personal -->
+    <li class="has-submenu hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">
+      Personal
+      <ul class="submenu space-y-1 pl-5 mt-1 hidden">
+        <li data-step="0" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Personal 1</li>
+        <li data-step="1" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Personal 2</li>
+      </ul>
+    </li>
+
+    <!-- Travel -->
+    <li data-step="2" class="sidebar-item hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">Travel</li>
+    <li data-step="3" class="sidebar-item hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">Travel Companiens</li>
+    <li data-step="4" class="sidebar-item hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">Previous U.S. Travel</li>
+    <li data-step="5" class="sidebar-item hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">Address and Phone</li>
+    <li data-step="6" class="sidebar-item hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">Passport</li>
+    <li data-step="7" class="sidebar-item hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">U.S. Contact</li>
+
+    <!-- Family -->
+    <li class="has-submenu hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">
+      Family
+      <ul class="submenu space-y-1 pl-5 mt-1 hidden">
+        <li data-step="8-1" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Relatives</li>
+        <li data-step="8-2" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Spouse</li>
+      </ul>
+    </li>
+
+    <!-- Work / Education / Training -->
+    <li class="has-submenu hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">
+      Work / Education / Training
+      <ul class="submenu space-y-1 pl-5 mt-1 hidden">
+        <li data-step="9-1" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Present</li>
+        <li data-step="9-2" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Previous</li>
+        <li data-step="9-3" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Additional</li>
+      </ul>
+    </li>
+
+    <!-- Security & Background Information -->
+    <li class="has-submenu hover:bg-blue-200 rounded px-3 py-2 cursor-pointer transition">
+      Security & Background Information
+      <ul class="submenu space-y-1 pl-5 mt-1 hidden">
+        <li data-step="10-1" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Part 1</li>
+        <li data-step="10-2" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Part 2</li>
+        <li data-step="10-3" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Part 3</li>
+        <li data-step="10-4" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Part 4</li>
+        <li data-step="10-5" class="sidebar-item hover:bg-blue-100 rounded px-3 py-1 cursor-pointer">Part 5</li>
+      </ul>
+    </li>
+
+  </ul>
+</aside>
+
+      <!-- Detail Section -->
+
+      <div
+        class="bg-white shadow-md rounded-r-lg p-6 lg:col-span-3 border-l border-gray-200"
+      >
+       <div
+  class="bg-white shadow-md rounded-r-lg p-6 lg:col-span-3 border-l border-gray-200"
+>
+  <div
+    class="flex flex-wrap justify-between items-center mb-6 bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 text-white p-4 rounded-t-md shadow-md"
+  >
+    <h4 class="text-red-700 font-serif text-base md:text-lg">
+      Online Nonimmigrant Visa Application (DS-160)
+    </h4>
+    <p class="text-sm">
+      Application ID: <strong id="applicationId" class="text-red-700"></strong>
+    </p>
+  </div>
+</div>
+
+
+<form id="applicationForm" action="../backend/submit.php" method="POST">
+
+        <main id="dsform-section">
+          <div
+           id="step-personal-1" class="form-step space-y-6 ">
+            <h2 class="font-semibold text-sm">Personal Information 1</h2>
+            <div class="mb-4">
+              <div>
+                <label for="surnames" class="font-semibold"
+                  >Surnames:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Enter all surnames as listed in your passport. If only one name is listed in your passport, enter that Surname."
+                    >ℹ️</span
+                  >
+                </label>
+                <input
+                  type="text"
+                  id="surnames"
+                  name="surnames"
+                  class="w-full border rounded px-3 py-2 mt-1"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="given-names"
+                  class="font-semibold flex items-center gap-2"
+                  >Given Names:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="If your passport does not include a given name, please enter 'FNU' in Given Names."
+                    >ℹ️</span
+                  >
+                </label>
+                <input
+                  type="text"
+                  id="given-names"
+                  name="given-names"
+                  class="w-full border rounded px-3 py-2 mt-1"
+                  required
+                />
+                <span class="text-gray-500 text-xs">(e.g., JUAN MIGUEL)</span>
+              </div>
+
+              <div class="state-toggle-block">
+                <div class="mb-2">
+                  <label class="font-semibold block mb-1"
+                    >Full Name in Native Alphabet:</label
+                  >
+                  <input
+                  id="native-alphabet"
+                  name="native-alphabet"
+                    type="text"
+                    class="w-full border rounded px-3 py-2 state-input"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply/Technology Not Available</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1"
+                  >Have you ever used other names?</label
+                >
+                <div class="flex space-x-4">
+                  <label
+                    ><input
+                      type="radio"
+                      name="other-names"
+                      value="yes"
+                      data-original-required
+                    />
+                    Yes</label
+                  >
+                  <label
+                    ><input type="radio" name="other-names" value="no" />
+                    No</label
+                  >
+                </div>
+              </div>
+
+              <div id="other-names-container" class="hidden">
+                <div id="name-fields-wrapper"></div>
+                <button
+                  type="button"
+                  id="add-name-btn"
+                  class="btn btn-primary mt-2"
+                >
+                  Add Another
+                </button>
+              </div>
+
+              <div class="mb-4">
+                <label class="block font-semibold mb-1"
+                  >Do you have Telecode names?</label
+                >
+                <div class="flex space-x-4">
+                  <label
+                    ><input
+                      type="radio"
+                      name="telecode-names"
+                      value="yes"
+                      data-original-required
+                    />
+                    Yes</label
+                  >
+                  <label
+                    ><input type="radio" name="telecode-names" value="no" data-original-required />
+                    No</label
+                  >
+                </div>
+              </div>
+
+              <div id="telecode-fields" class="hidden mt-3">
+                <div class="mb-2">
+                  <label class="block text-xs">Telecode Surnames</label>
+                  <input
+                  name="telecodeS"
+                    type="text"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label class="block text-xs">Telecode Given Names</label>
+                  <input
+                  name="telecodeG"
+                    type="text"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="sex" class="font-semibold mb-1 block"
+                  >Sex:<span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Please select MALE or FEMALE"
+                    >ℹ️</span
+                  >
+                </label>
+                <select
+                  id="sex"
+                  required
+                  name="sex"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option>Select One</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="marital-status" class="font-semibold mb-1 block"
+                  >Marital Status:</label
+                >
+                <select
+                  id="marital-status"
+                  required
+                  name="marital-status"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option>Select One</option>
+                  <option>Married</option>
+                  <option>Single</option>
+                  <option>Divorced</option>
+                  <option>Widowed</option>
+                  <option>Others</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="font-semibold flex items-center gap-2"
+                  >Date of Birth:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="If day or month is unknown, enter as shown in passport."
+                    >ℹ️</span
+                  >
+                </label>
+                    <input type="date" name="dooob" id="dooob" placeholder="Date of Birth" required
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+    
+              </div>
+
+              <div>
+                <label for="birth-city" class="font-semibold mb-1 block"
+                  >City:</label
+                >
+                <input
+                  type="text"
+                  id="birth-city"
+                  name="birth-city"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div class="state-toggle-block">
+                <div class="mb-2">
+                  <label class="font-semibold block mb-1">State/Province</label>
+                  <input
+                    type="text"
+                    name="state"
+                    class="w-full border rounded px-3 py-2 state-input"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="birth-country" class="font-semibold mb-1 block"
+                  >Country/Region:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Select the name that is currently in use for the place where you were born."
+                    >ℹ️</span
+                  >
+                </label>
+                <select
+                  id="birth-country"
+                  name="birth-country"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                >
+                  <option>Select One</option>
+                </select>
+              </div>
+            </div>
+            <footer class="mt-10 border-t border-gray-300 pt-6">
+              <!-- Existing Footer Content -->
+              <div
+                class="bg-gray-50 border border-gray-300 p-4 rounded mb-6 text-xs leading-relaxed"
+              >
+                <p>
+                  Public reporting burden for this collection of information is
+                  estimated to average <strong>90 minutes per response</strong>,
+                  including time required for searching existing data sources,
+                  gathering the necessary documentation, providing the
+                  information and/or documents required, and reviewing the final
+                  collection. You do not have to supply this information unless
+                  this collection displays a currently valid OMB control number.
+                </p>
+                <p class="mt-2">
+                  If you have comments on the accuracy of this burden estimate
+                  and/or recommendations for reducing it, please send them to:
+                  <a
+                    href="mailto:PRA_BurdenComments@state.gov"
+                    class="text-blue-600 underline"
+                    >PRA_BurdenComments@state.gov</a
+                  >
+                </p>
+              </div>
+
+              <div
+                class="bg-gray-50 border border-gray-300 p-4 rounded mb-6 text-xs leading-relaxed"
+              >
+                <h5 class="font-semibold mb-2">Confidentiality Statement</h5>
+                <p>
+                  The information asked for on this form is requested pursuant
+                  to Section 222 of the Immigration and Nationality Act. INA
+                  Section 222(f) provides that the records of the Department of
+                  State and of diplomatic and consular offices of the United
+                  States pertaining to the issuance and refusal of visas or
+                  permits to enter the United States shall be considered
+                  confidential and shall be used only for the formulation,
+                  amendment, administration, or enforcement of the immigration,
+                  nationality, and other laws of the United States.
+                </p>
+                <p class="mt-2">
+                  Certified copies of such records may be made available to a
+                  court provided the court certifies that the information
+                  contained in such records is needed in a case pending before
+                  the court.
+                </p>
+              </div>
+            </footer>
+            
+
+          </div>
+
+          <!-- Personal Information 2 Section -->
+          <div
+            id="step-personal-2"
+            class="form-step space-y-6 hidden mt-10"
+          >
+            <h2 class="font-semibold text-sm">Personal Information 2</h2>
+
+            <div>
+              <label for="nationality" class="font-semibold"
+                >Country/Region of Origin (Nationality):
+                <span
+                  class="text-blue-600 cursor-pointer"
+                  data-bs-toggle="tooltip"
+                  title="Enter all nationalities you currently hold and all nationalities you have previously held, regardless of whether you have formally and/or legally relinquished the nationality. If the country where you previously held nationality is no longer a political entity or country, select the nationality that corresponds with the name of the country that is currently used for that location.."
+                  >ℹ️</span
+                >
+              </label>
+              <select
+                id="nationality"
+                name="nationality"
+                class="w-full border rounded px-3 py-2"
+                required
+              >
+                <option>Select One</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Do you hold or have you held any nationality other than the one
+                indicated above?
+              </label>
+              <div class="flex space-x-4">
+                <label>
+                  <input
+                    type="radio"
+                    name="other-nationality"
+                    value="yes"
+                    required
+                  />
+                  Yes
+                </label>
+                <label>
+                  <input type="radio" name="other-nationality" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div
+              id="other-nationality-section"
+              class="hidden space-y-4 border p-4 rounded bg-gray-100"
+            >
+              <div>
+                <label class="block font-semibold mb-1"
+                  >Select Other Nationality:</label
+                >
+                <select
+                  id="other-nationality-select"
+                  name="other-nationality-select"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option value="">Select One</option>
+                 
+                </select>
+              </div>
+
+              <div id="passport-question" class="hidden">
+                <label class="block font-semibold mb-1"
+                  >Do you hold a passport for this country?</label
+                >
+                <div class="flex gap-4">
+                  <label
+                    ><input type="radio" name="passport-held" value="yes" />
+                    Yes</label
+                  >
+                  <label
+                    ><input type="radio" name="passport-held" value="no" />
+                    No</label
+                  >
+                </div>
+              </div>
+
+              <div id="passport-number" class="hidden">
+                <label class="block font-semibold mb-1">Passport Number:</label>
+                <input name="Pnumber" type="text" class="w-full border rounded px-3 py-2" />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Are you a permanent resident of a country/region other than
+                your country/region of origin (nationality) indicated above?
+                <span
+                  class="text-blue-600 cursor-pointer"
+                  data-bs-toggle="tooltip"
+                  title="Permanent resident means any individual who has been legally granted by a country/region permission to live and work without time limitation in that country/region."
+                  >ℹ️</span
+                >
+              </label>
+              <div class="flex space-x-4">
+                <label
+                  ><input
+                    type="radio"
+                    name="other_permanent"
+                    value="yes"
+                    id="other-permanent-yes"
+                    required
+                  />
+                  Yes</label
+                >
+                <label
+                  ><input type="radio" name="other_permanent" value="no" />
+                  No</label
+                >
+              </div>
+            </div>
+
+            <div id="other-permanent-container" class="hidden mb-4 space-y-4">
+              <h2 class="text-md font-semibold text-gray-800">
+                Provide the following information:
+              </h2>
+              <div id="permanent-fields-wrapper"></div>
+              <button
+                type="button"
+                id="add-other-permanent-btn"
+                class="bg-green-600 text-white py-1 px-3 rounded hover:bg-green-700"
+              >
+                + Add Another
+              </button>
+            </div>
+            <div class="state-toggle-block">
+              <div class="mb-2">
+                <label class="font-semibold block mb-1"
+                  >National Identification Number:<span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Your National ID Number is a unique number that your government provides. The U.S. Government provides unique numbers to those who seek employment (Social Security Number) or pay taxes (Taxpayer ID)."
+                    >ℹ️</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  name="NINum"
+                  class="w-full border rounded px-3 py-2 state-input"
+                  required
+                />
+                <div class="flex items-center gap-2 text-sm mt-1">
+                  <input type="checkbox" class="state-toggle-checkbox" />
+                  <label>Does Not Apply</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >U.S. Social Security Number</label
+              >
+              <div class="flex items-center space-x-2">
+                <input
+                  type="text"
+                  id="ssn-part1"
+                  name="ssn-part1"
+                  maxlength="3"
+                  class="w-16 text-center border rounded px-2 py-1"
+                  required
+                />
+                <span>-</span>
+                <input
+                  type="text"
+                  id="ssn-part2"
+                  name="ssn-part2"
+                  maxlength="2"
+                  class="w-12 text-center border rounded px-2 py-1"
+                />
+                <span>-</span>
+                <input
+                  type="text"
+                  id="ssn-part3"
+                  name="ssn-part3"
+                  maxlength="4"
+                  class="w-20 text-center border rounded px-2 py-1"
+                />
+              </div>
+
+              <div class="mt-2 flex items-center gap-1 text-sm">
+                <input type="checkbox" id="toggle-checkbox" />
+                <label for="toggle-checkbox">Does Not Apply</label>
+              </div>
+            </div>
+
+            <div class="state-toggle-block">
+              <div class="mb-2">
+                <label class="font-semibold block mb-1"
+                  >U.S. Taxpayer ID Number</label
+                >
+                <input
+                  type="text"
+                  name="taxpayer"
+                  class="w-full border rounded px-3 py-2 state-input"
+                  required
+                />
+                <div class="flex items-center gap-2 text-sm mt-1">
+                  <input type="checkbox" class="state-toggle-checkbox" />
+                  <label>Does Not Apply</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Travel Information  -->
+          <div
+           id="step-travel"
+            
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-4">Travel Information</h1>
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong> Provide the following information
+              concerning your travel plans.
+            </div>
+            <div class="mb-6">
+              <h2 class="font-semibold te xt-md mb-2">
+                Provide the following information:
+              </h2>
+
+              <div id="purpose-specify-container">
+                <div
+                  class="purpose-specify-block bg-[#f0f4f8] p-4 rounded-md mb-6 flex items-start gap-3"
+                >
+                  <div class="w-full">
+                    <label for="purpose" class="font-semibold block mb-1"
+                      >Purpose of Trip to the U.S.</label
+                    >
+                    <select
+                    id="purpose"
+                      name="purpose"
+                      class="purpose w-full border border-gray-300 rounded px-3 py-2"
+                    >
+                      <option value="">--Select Purpose--</option>
+                      <option value="A">FOREIGN GOVERNMENT OFFICIAL (A)</option>
+                      <option value="B">
+                        TEMP. BUSINESS PLEASURE VISITOR (B)
+                      </option>
+                      <option value="F">STUDENT (F)</option>
+                      <option value="M">VOCATIONAL STUDENT (M)</option>
+                      <option value="J">EXCHANGE VISITOR (J)</option>
+                      <option value="H">TEMPORARY WORKER (H)</option>
+                      <option value="L">INTRACOMPANY TRANSFEREE (L)</option>
+                      <option value="O">
+                        PERSON WITH EXTRAORDINARY ABILITY (O)
+                      </option>
+                      <option value="P">ATHLETE, ENTERTAINER (P)</option>
+                      <option value="R">RELIGIOUS WORKER (R)</option>
+                      <option value="E">TREATY TRADER / INVESTOR (E)</option>
+                      <option value="C/D">CREWMEMBER / TRANSIT (C/D)</option>
+                      <option value="K">
+                        FIANCÉ(E) / SPOUSE OF U.S. CITIZEN (K)
+                      </option>
+                      <option value="Q">CULTURAL EXCHANGE (Q)</option>
+                      <option value="SPECIAL">
+                        SPECIAL CATEGORIES (T, U, S, V)
+                      </option>
+                    </select>
+                  </div>
+                  <div class="w-full">
+                    <label class="font-semibold block mb-1">Specify</label>
+                    <select
+                      name="specify"
+                      id="specipy"
+                      class="specify w-full border border-gray-300 rounded px-3 py-2"
+                    >
+                      <option value="">--Select Specify--</option>
+                    </select>
+                  </div>
+                  <button
+                    type="button"
+                    class="remove-btn hidden text-red-600 font-bold mt-6"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                id="add-purpose-specify"
+                class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
+                Add Another
+              </button>
+
+              <div class="mt-6">
+                <label class="font-semibold block mb-1"
+                  >Application Receipt/Petition Number:</label
+                >
+                <input
+                  type="text"
+                  name="application_pnum"
+                  class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+                <span class="text-gray-500 text-xs">(e.g., ABC1234567890)</span>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label class="block font-semibold mb-1">
+                Q: Have you made specific travel plans?
+                <span
+                  class="text-blue-600 cursor-pointer"
+                  data-bs-toggle="tooltip"
+                  title="If you are unsure of your Date of Arrival in U.S. or Date of Departure from U.S., please provide an estimate.
+Date of Arrival in U.S."
+                  >ℹ️</span
+                >
+              </label>
+              <div class="flex space-x-4">
+                <label>
+                  <input
+                    type="radio"
+                    name="travel-plans"
+                    value="yes"
+                    required
+                  />
+                  Yes
+                </label>
+                <label>
+                  <input type="radio" name="travel-plans" value="no" /> No
+                </label>
+              </div>
+            </div>
+            <div id="travel-plans-wrapper" class="hidden">
+              <div id="Tplans-fields" class="mb-6">
+                <div
+                  class="mx-auto flex max-w-sm flex-col gap-y-4 rounded-xl bg-[#f0f4f8] p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
+                >
+                  <label class="font-semibold text-med mb-2">
+                    Provide a complete itinerary for your travel to the U.S:
+                    <span
+                      class="text-blue-600 cursor-pointer"
+                      data-bs-toggle="tooltip"
+                      title="If you are unsure of your Date of Arrival in U.S. or Date of Departure from U.S., please provide an estimate."
+                      >ℹ️</span
+                    >
+                  </label>
+
+                  <div class="mb-1">
+                    <label for="arrival-date" class="block font-semibold mb-1">
+                      Date of Arrival in U.S.
+                    </label>
+                    <input
+                      type="date"
+                      id="arrival-date"
+                      name="arrival-date"
+                      class="w-full border rounded px-3 py-2 mb-1"
+                    />
+                  </div>
+                  <div>
+                    <label for="Arrival-Flight" class="font-semibold mb-1 block"
+                      >Arrival Flight (if know)</label
+                    >
+                    <input
+                      type="text"
+                      id="Arrival-flight"
+                      class="w-full border rounded px-3 py-2"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="Arrival-city" class="font-semibold mb-1 block"
+                      >Arrival City</label
+                    >
+                    <input
+                      type="text"
+                      id="Arrival-city"
+                      class="w-full border rounded px-3 py-2"
+                      required
+                    />
+                  </div>
+                  <div class="mb-1">
+                    <label
+                      for="departure-date"
+                      class="block font-semibold mb-1"
+                    >
+                      Date of Departure from U.S.
+                    </label>
+                    <input
+                      type="date"
+                      id="departure-date"
+                      name="departure-date"
+                      class="w-full border rounded px-3 py-2 mb-1"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="Departure-Flight"
+                      class="font-semibold mb-1 block"
+                      >Departure Flight(if know)</label
+                    >
+                    <input
+                      type="text"
+                      id="Departure-Flight"
+                      class="w-full border rounded px-3 py-2"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="Departure-city" class="font-semibold mb-1 block"
+                      >Departure City</label
+                    >
+                    <input
+                      type="text"
+                      id="Departure-city"
+                      class="w-full border rounded px-3 py-2"
+                      required
+                    />
+                  </div>
+
+                  <div class="Location mb-4">
+                    <h2 class="font-semibold text-md mb-2">
+                      Provide the locations you plan to visit in the U.S.
+                    </h2>
+
+                    <div id="locations-container" class="space-y-2">
+                      <div class="location-item flex items-center gap-2">
+                        <input
+                          type="text"
+                          name="locations[]"
+                          class="w-full border rounded px-3 py-2"
+                          placeholder="Enter location"
+                          required
+                        />
+                        <button
+                          type="button"
+                          class="remove-btn text-red-500 font-bold hidden"
+                        >
+                          X
+                        </button>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      id="add-location-btn"
+                      class="mt-2 bg-green-600 text-white py-1 px-3 rounded hover:bg-green-700"
+                    >
+                      + Add Another Location
+                    </button>
+                  </div>
+
+                  <div class="mb-8">
+                    <h2 class="font-semibold text-lg mb-1">
+                      Address Where You Will Stay in the U.S.
+                    </h2>
+                    <div>
+                      <label for="Street1" class="font-semibold mb-1 block"
+                        >Street Address (Line 1)</label
+                      >
+                      <input
+                        type="text"
+                        id="Street1"
+                        name="Street1"
+                        class="w-full border rounded px-3 py-2"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label for="Street2" class="font-semibold mb-1 block"
+                        >Street Address (Line 2)
+                        <span class="text-red-500">*optional</span></label
+                      >
+                      <input
+                        type="text"
+                        id="Street2"
+                        name="Street2"
+                        class="w-full border rounded px-3 py-2"
+                     
+                      />
+                    </div>
+                    <div>
+                      <label for="City" class="font-semibold mb-1 block"
+                        >City</label
+                      >
+                      <input
+                        type="text"
+                        id="City"
+                        name="City"
+                        class="w-full border rounded px-3 py-2"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label for="us-states" class="font-semibold mb-1 block"
+                        >State</label
+                      >
+                      <select
+                        id="us-states1"
+                        name="us-states1"
+                        class="us-states w-full border border-gray-300 rounded px-3 py-2"
+                        required
+                      >
+                        <option value="">Loading states...</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label for="Zcode" class="font-semibold mb-1 block"
+                        >Zip Code (if know)</label
+                      >
+                      <input
+                        type="number"
+                        id="Zcode"
+                        name="Zcode"
+                        class="w-full border rounded px-3 py-2"
+                        required
+                      />
+                      <span class="text-gray-500 text-xs"
+                        >(e.g., 12345 or 12345-1234)</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-dotted border-gray-400 my-6" />
+
+            <div id="no-travel-plans-wrapper" class="hidden">
+              <div class="mb-6">
+                <label class="font-semibold block mb-1"
+                  >Intended Date of Arrival:</label
+                >
+                <input
+                  type="date"
+                  name="intended_date"
+                  class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="stay-time" class="font-semibold mb-1 block">
+                  Intended Length of Stay in U.S
+                </label>
+                <div class="flex items-center gap-3">
+                  <input
+                    type="number"
+                    id="stay-length"
+                    name="stay-length"
+                    maxlength="3"
+                    class="w-16 text-center border rounded px-2 py-1"
+                    required
+                  />
+                  <select
+                    id="stay-time"
+                    name="stay-time"
+                    class="flex-grow border border-gray-300 rounded px-3 py-2"
+                    required
+                  >
+                    <option value="">--Select Option--</option>
+                    <option value="YE">YEAR(S)</option>
+                    <option value="MO">MONTH(S)</option>
+                    <option value="WE">WEEK(S)</option>
+                    <option value="DA">DAY(S)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="address-section" class="hidden mt-6">
+                <h2 class="font-semibold text-lg mb-1">
+                  Address Where You Will Stay in the U.S.
+                </h2>
+
+                <div>
+                  <label for="Street1-intend" class="font-semibold mb-1 block"
+                    >Street Address (Line 1)</label
+                  >
+                  <input
+                    type="text"
+                    id="Street1-intend"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="Street2-intend" class="font-semibold mb-1 block"
+                    >Street Address (Line 2)
+                    <span class="text-red-500">*optional</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="Street2-intend"
+                    class="w-full border rounded px-3 py-2"
+                   
+                  />
+                </div>
+                <div>
+                  <label for="City-intend" class="font-semibold mb-1 block"
+                    >City</label
+                  >
+                  <input
+                    type="text"
+                    id="City-intend"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="us-states" class="font-semibold mb-1 block"
+                    >State</label
+                  >
+                  <select
+                    id="us-states2"
+                    name="us-states2"
+                    class="us-states w-full border border-gray-300 rounded px-3 py-2"
+                    required
+                  >
+                    <option value="">Loading states...</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="Zcode-intend" class="font-semibold mb-1 block"
+                    >Zip Code (if know)</label
+                  >
+                  <input
+                    type="number"
+                    id="Zcode-intend"
+                    name="Zcode-intend"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                  <span class="text-gray-500 text-xs"
+                    >(e.g., 12345 or 12345-1234)</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="trip-payer" class="font-semibold mb-1 block">
+                Person/Entity Paying for Your Trip
+              </label>
+              <select
+                id="trip-payer"
+                name="trip-payer"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                required
+              >
+                <option value="">--Select Option--</option>
+                <option value="S">Self</option>
+                <option value="UP">U.S. Petitioner</option>
+                <option value="OP">Other Person</option>
+                <option value="PE">Present Employer</option>
+                <option value="ES">Employer in the U.S.</option>
+                <option value="OC">Other Company/Organization</option>
+              </select>
+            </div>
+
+            <!-- Other Person Section -->
+            <div id="other-person-section" class="hidden mb-6">
+              <h3 class="font-semibold mb-2">
+                Provide the following information:
+              </h3>
+              <div>
+                <label for="person-name" class="font-semibold mb-1 block"
+                  >Surnames of Person Paying for Trip
+                </label>
+                <input
+                  type="text"
+                  id="person-name"
+                  name="person-name"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+                <span class="text-gray-500 text-xs"
+                  >(e(e.g., FERNANDEZ GARCIA))</span
+                >
+              </div>
+              <div>
+                <label for="person-gname" class="font-semibold mb-1 block"
+                  >Given Names of Person Paying for Trip
+                </label>
+                <input
+                  type="text"
+                  id="person-gname"
+                  name="person-gname"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+                <span class="text-gray-500 text-xs">(e.g., JUAN MIGUEL)</span>
+              </div>
+              <div>
+                <label for="person-number" class="font-semibold mb-1 block"
+                  >Telephone Number :
+                </label>
+                <input
+                  type="number"
+                  id="person-number"
+                  name="person-number"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+              <div class="state-toggle-block">
+                <label for="person-gmail" class="font-semibold mb-1 block">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="person-gmail"
+                  class="state-input w-full border rounded px-3 py-2"
+                  required
+                />
+                <span class="text-gray-500 text-xs"
+                  >((e.g., emailaddress@example.com))</span
+                >
+                <div class="flex items-center gap-2 text-sm mt-1">
+                  <input type="checkbox" class="state-toggle-checkbox" />
+                  <label>Does Not Apply</label>
+                </div>
+              </div>
+              <div>
+                <label for="your-relation" class="font-semibold mb-1 block"
+                  >Relationship to You</label
+                >
+                <select
+                  id="your-relation"
+                  name="your-relation"
+                  class="w-full border border-gray-300 rounded px-3 py-2"
+                  required
+                >
+                  <option value="">--Select State--</option>
+                  <option value="relative">Relative</option>
+                  <option value="spouse">Spouse</option>
+                  <option value="friend">Friend</option>
+                  <option value="Ba">Business Associate</option>
+                  <option value="child">Child</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q: Is the address of the party paying for your trip the same
+                  as your Home or Mailing Address?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="same-address" value="yes" />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="same-address" value="no" />
+                    No
+                  </label>
+                </div>
+              </div>
+
+              <!-- Company Address Section -->
+              <div id="address-section-company" class="hidden mt-6">
+                <h2 class="font-semibold text-lg mb-1">
+                  Address of Company/Organization Paying
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    title="Provide full address of the paying organization."
+                    >ℹ️</span
+                  >
+                </h2>
+
+                <div class="mb-2">
+                  <label for="street" class="font-semibold block mb-1"
+                    >Street Address (Line 1)</label
+                  >
+                  <input
+                    type="text"
+                    name="street"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+
+                <div class="mb-2">
+                  <label for="street2" class="font-semibold block mb-1"
+                    >Street Address (Line 2)
+                    <span class="text-red-500">*optional</span>
+                  </label>
+                  <input name="street2" type="text" class="w-full border rounded px-3 py-2" />
+                </div>
+
+                <div class="mb-2">
+                  <label for="city2" class="font-semibold block mb-1">City</label>
+                  <input
+                    type="text"
+                    name="city2"
+                    class="w-full border rounded px-3 py-2"
+                     required
+                  />
+                </div>
+                <div class="state-toggle-block">
+                  <div class="mb-2">
+                    <label for="state1" class="font-semibold block mb-1"
+                      >State/Province</label
+                    >
+                    <input
+                      type="text"
+                      name="state1"
+                      class="w-full border rounded px-3 py-2 state-input"
+                      required
+                    />
+                    <div class="flex items-center gap-2 text-sm mt-1">
+                      <input type="checkbox" class="state-toggle-checkbox" />
+                      <label>Does Not Apply</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="state-toggle-block">
+                  <div class="mb-2">
+                    <label for="postal1" class="font-semibold block mb-1"
+                      >Postal Code/Zip Code (if known)</label
+                    >
+                    <input
+                      type="text"
+                      name="postal1"
+                      class="w-full border rounded px-3 py-2 state-input"
+                      required
+                    />
+                    <div class="flex items-center gap-2 text-sm mt-1">
+                      <input type="checkbox" class="state-toggle-checkbox" />
+                      <label>Does Not Apply</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label for="person-pay" class="font-semibold"
+                    >Country/Region:
+                  </label>
+                  <select
+                    id="person-pay"
+                    name="person-pay"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  >
+                    <option>Select One</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Organization/Company Section -->
+            <div id="organization-section" class="hidden mb-6">
+              <h3 class="font-semibold mb-2">Organization Paying Details</h3>
+              <div>
+                <label for="company-name" class="font-semibold mb-1 block"
+                  >Name of Company/Organization Paying for Trip
+                </label>
+                <input
+                  type="text"
+                  id="company-name"
+                  name="compay-name"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+              <div>
+                <label for="company-phone" class="font-semibold mb-1 block"
+                  >Telephone Number
+                </label>
+                <input
+                  type="number"
+                  id="company-phone"
+                  name="company-phone"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+              <div>
+                <label for="company-relation" class="font-semibold mb-1 block"
+                  >Relationship to You</label
+                >
+                <input
+                  type="text"
+                  id="company-relation"
+                  name="company-relation"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+              <div id="address-section-company" class="mt-6">
+                <h2 class="font-semibold text-lg mb-1">
+                  Address of Company/Organization Paying<span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Provide the street address, apartment number (if applicable), city, state or province, country, and postal zone (if applicable) of the person or organization that is paying for your travel."
+                    >ℹ️</span
+                  >
+                </h2>
+                <div>
+                  <label for="Street1-company" class="font-semibold mb-1 block"
+                    >Street Address (Line 1)</label
+                  >
+                  <input
+                    type="text"
+                    id="Street1-company"
+                    name="Street1-company"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="Street2-company" class="font-semibold mb-1 block"
+                    >Street Address (Line 2)
+                    <span class="text-red-500">*optional</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="Street2-company"
+                    name="Street2-company"
+                    class="w-full border rounded px-3 py-2"
+                   
+                  />
+                </div>
+                <div>
+                  <label for="City-company" class="font-semibold mb-1 block"
+                    >City</label
+                  >
+                  <input
+                    type="text"
+                    id="City-company"
+                    name="City-company"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+                <div class="state-toggle-block">
+                  <label for="State-company" class="font-semibold mb-1 block">
+                    State/Province
+                  </label>
+                  <input
+                    type="text"
+                    name="State-company"
+                    class="state-input w-full border rounded px-3 py-2"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply</label>
+                  </div>
+                </div>
+                <div class="state-toggle-block">
+                  <label for="State-company-zip" class="font-semibold mb-1 block">
+                    Postal Code/Zip Code (if know)
+                  </label>
+                  <input
+                    type="text"
+                    name="State-company-zip"
+                    class="state-input w-full border rounded px-3 py-2"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply</label>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="Company-pay" class="font-semibold"
+                  >Country/Region:
+                </label>
+                <select
+                  id="Company-pay"
+                  name="Company-pay"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                >
+                  <option>Select One</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Travel Compnay information  -->
+          <div
+            id="step-company"
+            class="border border-gray-400 bg-gray-50 hidden p-6 rounded-md mb-6"
+          >
+            <h2 class="font-semibold text-lg mb-4">
+              Travel Company Information
+            </h2>
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong> Provide the following information
+              concerning your travel plans.
+            </div>
+            <h2 class="font-semibold text-lg mb-4">
+              Persons traveling with you<span
+                class="text-blue-600 cursor-pointer"
+                data-bs-toggle="tooltip"
+                title="You should answer Yes to this question if you are traveling with family, as part of an organized tour, or as part of a performing group or athletic team. You do not need to list individuals who are traveling with you for the purposes of employment with the same employer.."
+                >ℹ️</span
+              >
+            </h2>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Q: Are there other persons traveling with you?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="traveling" value="yes"  data-original-required/>
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="traveling" value="no" data-original-required="" />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div id="group-travel-section" class="hidden mb-4">
+              <label class="block font-semibold mb-1">
+                Q:Are you traveling as part of a group or organization?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="group-travel" value="yes"  data-original-required/>
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="group-travel" value="no" data-original-required />
+                  No
+                </label>
+              </div>
+            </div>
+            <div id="group-name-section" class="hidden mb-4">
+              <h2 class="font-semibold text-lg mb-4">
+                Enter the Name of the Group You Are Traveling With
+              </h2>
+              <label class="block font-semibold mb-1">Group Name</label>
+              <input type="text" class="w-full border rounded px-3 py-2" required/>
+            </div>
+
+            <!-- Individual Person Traveling Inputs (Hidden by default) -->
+            <div id="individual-travelers-section" class="hidden">
+              <div class="mb-4">
+                <label for="traveling-person" class="block font-semibold mb-1"
+                  >Surnames of Person Traveling With You</label
+                >
+                <input  name="traveling-person" type="text" class="w-full border rounded px-3 py-2" required/>
+              </div>
+
+              <div class="mb-4">
+                <label for="travel-gname" class="block font-semibold mb-1"
+                  >Given Names of Person Traveling With You</label
+                >
+                <input name="travel-gname" type="text" class="w-full border rounded px-3 py-2" required/>
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="us-contact-relationship"
+                  class="block font-semibold mb-1"
+                  >Relationship to You (U.S. Point of Contact)</label
+                >
+                <select
+                  id="us-contact-relationship"
+                  name="us-contact-relationship"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option value="">--Select Relationship--</option>
+                  <option value="Relative">Relative</option>
+                  <option value="Spouse">Spouse</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Business Associate">Business Associate</option>
+                  <option value="Employer">Child</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Previou Travel information  -->
+
+          <div
+            id="previous-Travel"
+            class="border border-gray-400 bg-gray-50 p-6 rounded-md mb-6 hidden"
+          >
+            <h2 class="font-semibold text-lg mb-4">
+              Previous U.S. Travel Information
+            </h2>
+
+            <!-- Note Box -->
+            <div
+              class="border border-gray-300 bg-white p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong> Provide the following previous U.S. travel
+              information. Provide complete and accurate information to all
+              questions that require an explanation.
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Q: Have you ever been in the U.S.?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="previous-traveling" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="previous-traveling" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div id="arrival-stay-container" class="hidden">
+              <div
+                class="arrival-stay-block mb-4 p-4 border border-gray-300 rounded-md bg-gray-50"
+              >
+                <div class="mb-4">
+                  <label for="arrival-intend" class="font-semibold block mb-1"
+                    >Intended Date of Arrival:</label
+                  >
+                  <input
+                    type="date"
+                    name="arrival-intend"
+                    class="w-full border border-gray-300 rounded px-3 py-2"
+                    required
+                  />
+                </div>
+
+                <div class="mb-4">
+                  <label for="length-stay" class="font-semibold block mb-1"
+                    >Intended Length of Stay in U.S</label
+                  >
+                  <div class="flex items-center gap-3">
+                    <input
+                      type="text"
+                      maxlength="3"
+                      name="length-stay"
+                      class="w-16 text-center border rounded px-2 py-1"
+                      required
+                    />
+                    <select
+                      class="flex-grow border border-gray-300 rounded px-3 py-2"
+                      required
+                    >
+                      <option value="">--Select Option--</option>
+                      <option value="YE">YEAR(S)</option>
+                      <option value="MO">MONTH(S)</option>
+                      <option value="WE">WEEK(S)</option>
+                      <option value="DA">DAY(S)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="remove-arrival-btn hidden text-red-600 text-sm font-semibold"
+                >
+                  Remove
+                </button>
+              </div>
+
+              <button
+                type="button"
+                id="add-arrival-stay-btn"
+                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+              >
+                Add Another
+              </button>
+
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q: Do you or did you ever hold a U.S. Driver’s License?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="driving-License" value="yes" />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="driving-License" value="no" />
+                    No
+                  </label>
+                </div>
+              </div>
+
+              <div id="drivers-license-container" class="hidden">
+                <h3 class="font-semibold text-md mb-2">
+                  Provide the following information:
+                </h3>
+
+                <div
+                  class="license-block mb-4 p-4 border border-gray-300 rounded-md bg-gray-50"
+                >
+                  <div class="mb-3">
+                    <label for="Dl-number" class="block font-semibold mb-1"
+                      >Driver's License Number:</label
+                    >
+                    <input
+                      type="text"
+                      name="Dl-number"
+                      class="w-full border border-gray-300 rounded px-3 py-2"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="us-states" class="font-semibold mb-1 block"
+                      >State</label
+                    >
+                    <select
+                      id="us-states3"
+                      name="us-states3"
+                      class="us-states w-full border border-gray-300 rounded px-3 py-2"
+                      required
+                    >
+                      <option value="">Loading states...</option>
+                    </select>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="remove-license-btn hidden text-red-600 text-sm font-semibold"
+                  >
+                    Remove
+                  </button>
+                </div>
+
+                <button
+                  type="button"
+                  id="add-license-btn"
+                  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+                >
+                  Add Another
+                </button>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Q: Have you ever been issued a U.S. Visa?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="visa-issue" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="visa-issue" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div
+              id="visa-information-container"
+              class="hidden border border-gray-300 bg-gray-50 p-6 rounded-md shadow-sm mt-4"
+            >
+              <h3 class="font-semibold text-md mb-2">Previous U.S. Visas:</h3>
+
+              <div class="mb-4">
+                <label for="visa-date" class="font-semibold block mb-1"
+                  >Date Last Visa Was Issued:</label
+                >
+                <input
+                  type="date"
+                  name="visa-date"
+                  class="w-full border border-gray-300 rounded px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div
+                class="state-toggle-block mt-4 border border-gray-300 p-4 rounded-md bg-gray-50"
+              >
+                <div class="mb-3">
+                  <label for="v-number" class="block font-semibold mb-1">Visa Number:</label>
+                  <input
+                    type="text"
+                    name="v-number"
+                    class="state-input w-full border border-gray-300 rounded px-3 py-2"
+                    required
+                  />
+                </div>
+
+                <div class="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    class="state-toggle-checkbox accent-blue-600"
+                  />
+                  <label class="text-gray-700">Does Not Apply</label>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q: Are you applying for the same type of visa?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="same-type" value="yes" />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="same-type" value="no" />
+                    No
+                  </label>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q: Are you applying in the same country or location where the
+                  visa above was issued, and is this country or location your
+                  place of principal of residence?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="same-country" value="yes" />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="same-country" value="no" />
+                    No
+                  </label>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q: Have you been ten-printed?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="ten-print" value="yes" />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="radio" name="ten-print" value="no" />
+                    No
+                  </label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q: Has your U.S. Visa ever been lost or stolen?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input
+                      id="visa-stolen-yes"
+                      type="radio"
+                      name="visa-stolen"
+                      value="yes"
+                    />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input
+                      id="visa-stolen-no"
+                      type="radio"
+                      name="visa-stolen"
+                      value="no"
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
+              <div
+                id="visa-stolen-details"
+                class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+              >
+                <div class="mb-3">
+                  <label class="block font-semibold mb-1"
+                    >Enter year visa was lost or stolen:</label
+                  >
+                  <input
+                    type="number"
+                    min="1900"
+                    max="2099"
+                    class="w-full border border-gray-300 rounded px-3 py-2"
+                    placeholder="Year"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="block font-semibold mb-1">Explain:</label>
+                  <textarea
+                    rows="4"
+                    class="w-full border border-gray-300 rounded px-3 py-2"
+                    placeholder="Provide explanation here..."
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1">
+                  Q:Has your U.S. Visa ever been cancelled or revoked?
+                </label>
+                <div class="flex space-x-6">
+                  <label class="flex items-center gap-2">
+                    <input
+                      id="visa-cancel-yes"
+                      type="radio"
+                      name="visa-cancel"
+                      value="yes"
+                    />
+                    Yes
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input
+                      id="visa-cancel-no"
+                      type="radio"
+                      name="visa-cancel"
+                      value="no"
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
+              <div
+                id="visa-cancel-details"
+                class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+              >
+                <label class="block font-semibold mb-1">Explain:</label>
+                <textarea
+                  rows="4"
+                  class="w-full border border-gray-300 rounded px-3 py-2"
+                  placeholder="Provide explanation here..."
+                ></textarea>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Q: Have you ever been refused a U.S. Visa, or been refused
+                admission to the United States, or withdrawn your application
+                for admission at the port of entry?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="application-refused" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="application-refused" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="application-refused-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Q: Has anyone ever filed an immigrant petition on your behalf
+                with the United States Citizenship and Immigration Services?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="immigrant" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="immigrant" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="immigrant-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Address and Phone Information  -->
+          <div
+            id="step-address-phone"
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-2">
+              Address and Phone Information
+            </h1>
+            <div id="Personal-addres" class="mt-6">
+              <h1 class="font-semibold text-lg mb-4">Home</h1>
+              <div class="mb-2">
+                <label for="street3" class="font-semibold block mb-1"
+                  >Street Address (Line 1)</label
+                >
+                <input
+                  type="text"
+                  name="street3"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div class="mb-2">
+                <label for="street4" class="font-semibold block mb-1"
+                  >Street Address (Line 2)
+                  <span class="text-red-500">*optional</span></label
+                >
+                <input name="street4" type="text" class="w-full border rounded px-3 py-2" />
+              </div>
+
+              <div class="mb-2">
+                <label for="city3" class="font-semibold block mb-1">City</label>
+                <input
+                  name="city3"
+                  type="text"
+                  class="w-full border rounded px-3 py-2"
+                 required
+                />
+              </div>
+              <div class="state-toggle-block">
+                <div class="mb-4">
+                  <label for="province2" class="font-semibold block mb-1">State/Province</label>
+                  <input
+                  name="province2"
+                    type="text"
+                    class="w-full border rounded px-3 py-2 state-input"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply</label>
+                  </div>
+                </div>
+              </div>
+              <div class="state-toggle-block">
+                <div class="mb-4">
+                  <label for="zcode2" class="font-semibold block mb-1"
+                    >Postal Code/Zip Code (if known)</label
+                  >
+                  <input
+                    type="text"
+                    name="zcode2"
+                    class="w-full border rounded px-3 py-2 state-input"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="personal-country" class="font-semibold"
+                  >Country/Region:
+                </label>
+                <select
+                  id="personal-country"
+                  name="personal-country"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                >
+                  <option>Select One</option>
+                </select>
+              </div>
+              <!-- Mailing Address section  -->
+              <div class="mb-4 mt-2">
+                <label class="block font-semibold mb-2"
+                  >Q:Is your Mailing Address the same as your Home
+                  Address?</label
+                >
+                <div class="flex space-x-4">
+                  <label
+                    ><input
+                      type="radio"
+                      name="personal-mail"
+                      value="yes"
+                      id="personal-mail-yes"
+                      required
+                    />
+                    Yes</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      id="personal-mail-no"
+                      name="personal-mail"
+                      value="no"
+                    />
+                    No</label
+                  >
+                </div>
+              </div>
+              <div
+                id="personal-mail-details"
+                class="fmx-auto hidden flex max-w-sm flex-col gap-y-4 rounded-xl p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10 bg-[#f0f4f8]"
+              >
+                <h1 class="font-semibold text-lg mb-4">Mail Address</h1>
+                <div class="mb-4">
+                  <label for="street5" class="font-semibold block mb-1"
+                    >Street Address (Line 1)</label
+                  >
+                  <input
+                    type="text"
+                    name="street5"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+
+                <div class="mb-4">
+                  <label for="streetOP" class="font-semibold block mb-1"
+                    >Street Address (Line 2)
+                    <span class="text-red-500">*optional</span></label
+                  >
+                  <input name="streetOp" type="text" class="w-full border rounded px-3 py-2" />
+                </div>
+
+                <div class="mb-4">
+                  <label for="city4" class="font-semibold block mb-1">City</label>
+                  <input
+                    type="text"
+                    name="city4"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  />
+                </div>
+                <div class="state-toggle-block">
+                  <div class="mb-4">
+                    <label for="province" class="font-semibold block mb-1"
+                      >State/Province</label
+                    >
+                    <input
+                    name="province"
+                      type="text"
+                      class="w-full border rounded px-3 py-2 state-input"
+                      required
+                    />
+                    <div class="flex items-center gap-2 text-sm mt-1">
+                      <input type="checkbox" class="state-toggle-checkbox" />
+                      <label>Does Not Apply</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="state-toggle-block">
+                  <div class="mb-4">
+                    <label for="zcode3" class="font-semibold block mb-1"
+                      >Postal Code/Zip Code (if known)</label
+                    >
+                    <input
+                      type="text"
+                      name="zcode3"
+                      class="w-full border rounded px-3 py-2 state-input"
+                      required
+                    />
+                    <div class="flex items-center gap-2 text-sm mt-1">
+                      <input type="checkbox" class="state-toggle-checkbox" />
+                      <label>Does Not Apply</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label for="mailing-country" class="font-semibold"
+                    >Country/Region:
+                  </label>
+                  <select
+                    id="mailing-country"
+                    name="mailing-country"
+                    class="w-full border rounded px-3 py-2"
+                    required
+                  >
+                    <option>Select One</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Phone Section Container -->
+            <div
+              class="mt-6 p-4 border border-gray-300 rounded-lg bg-white shadow-sm"
+            >
+              <h1 class="font-semibold text-lg mb-4">
+                Phone
+                <span
+                  class="text-blue-600 cursor-pointer"
+                  data-bs-toggle="tooltip"
+                  title="You must provide a primary phone number. The primary phone number should be the phone number at which you are most likely to be reached; this could be a land line or a cellular/mobile number. If you have an additional land line or a cellular/mobile number please list that as your secondary phone number."
+                  >ℹ️</span
+                >
+              </h1>
+
+              <div class="mb-4">
+                <label for="p-number"  class="font-semibold block mb-1"
+                  >Primary Phone Number</label
+                >
+                <input
+                  type="text"
+                  name="p-number"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div class="state-toggle-block mb-4">
+                <label for="s-number" class="font-semibold block mb-1"
+                  >Secondary Phone Number</label
+                >
+                <input
+                name="s-number"
+                  type="text"
+                  class="w-full border rounded px-3 py-2 state-input"
+                  required
+                />
+                <div class="flex items-center gap-2 text-sm mt-1">
+                  <input type="checkbox" class="state-toggle-checkbox" />
+                  <label>Does Not Apply</label>
+                </div>
+              </div>
+
+              <!-- Work Phone -->
+              <div class="state-toggle-block">
+                <label for="w-number" class="font-semibold block mb-1"
+                  >Work Phone Number</label
+                >
+                <input
+                name="w-number"
+                  type="text"
+                  class="w-full border rounded px-3 py-2 state-input"
+                  required
+                />
+                <div class="flex items-center gap-2 text-sm mt-1">
+                  <input type="checkbox" class="state-toggle-checkbox" />
+                  <label>Does Not Apply</label>
+                </div>
+              </div>
+              <div id="old-number-details" class="mb-4 mt-2">
+                <label class="block font-semibold mb-2"
+                  >Q:Have you used any other phone numbers in the last five
+                  years? ?</label
+                >
+                <div class="flex space-x-4">
+                  <label
+                    ><input
+                      type="radio"
+                      name="old-number"
+                      value="yes"
+                      id="old-number-yes"
+                      required
+                    />
+                    Yes</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      id="old-number-no"
+                      name="old-number"
+                      value="no"
+                    />
+                    No</label
+                  >
+                </div>
+              </div>
+              <div
+                id="old-number-section"
+                class="mb-4 bg-[#f0f4f8] hidden p-4 rounded-lg shadow-sm"
+              >
+                <div id="phone-container">
+                  <div class="mb-4 phone-block">
+                    <label for="a-number" class="font-semibold block mb-1"
+                      >Additional Phone Number</label
+                    >
+                    <input
+                    name="a-number"
+                      type="text"
+                      class="w-full border rounded px-3 py-2"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="flex gap-2 mt-2">
+                  <button
+                    type="button"
+                    id="add-phone-btn"
+                    class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition-colors"
+                  >
+                    + Add Another
+                  </button>
+                  <button
+                    type="button"
+                    id="remove-phone-btn"
+                    class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 hidden transition-colors"
+                  >
+                    - Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 p-4 border border-gray-300 rounded-lg bg-white shadow-sm"
+            >
+              <div class="mb-4">
+                <label for="person-gmail1" class="font-semibold mb-1 block"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="person-gmail1"
+                  name="person-gmail1"
+                  class="state-input w-full border rounded px-3 py-2"
+                  required
+                />
+                <span class="text-gray-500 text-xs"
+                  >(e.g., emailaddress@example.com)</span
+                >
+              </div>
+            </div>
+          </div>
+
+         
+
+          <!-- Faimly Information  -->
+      
+
+        
+          <!-- Work/Training/Information  -->
+         
+          
+
+        
+
+          <div
+            id="step-security-part1"
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-4">
+              Security and Backgroud information:Part1
+            </h1>
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong> Provide the following security and
+              background information. Provide complete and accurate information
+              to all questions that require an explanation. A visa may not be
+              issued to persons who are within specific categories defined by
+              law as inadmissible to the United States (except when a waiver is
+              obtained in advance). Are any of the following applicable to you?
+              While a YES answer does not automatically signify ineligibility
+              for a visa, if you answer YES you may be required to personally
+              appear before a consular officer.
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Do you have a communicable disease of public health
+                significance? (Communicable diseases of public significance
+                include chancroid, gonorrhea, granuloma inguinale, infectious
+                leprosy, lymphogranuloma venereum, infectious stage syphilis,
+                active tuberculosis, and other diseases as determined by the
+                Department of Health and Human Services.) ?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="health-issue-yes"
+                    type="radio"
+                    name="health-issue"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="health-issue-no"
+                    type="radio"
+                    name="health-issue"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="health-issue-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Do you have a mental or physical disorder that poses or is
+                likely to pose a threat to the safety or welfare of yourself or
+                others?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="physical-disorder-yes"
+                    type="radio"
+                    name="physical-disorder"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="physical-disorder-no"
+                    type="radio"
+                    name="physical-disorder"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="physical-disorder-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Are you or have you ever been a drug abuser or addict?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="drug-abuse-yes"
+                    type="radio"
+                    name="drug-abuse"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="drug-abuse-no"
+                    type="radio"
+                    name="drug-abuse"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="drug-abuse-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div
+            id="step-security-part2"
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-4">
+              Security and Backgroud information:Part2
+            </h1>
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong> Provide the following security and
+              background information. Provide complete and accurate answers to
+              all questions that require an explanation. A visa may not be
+              issued to persons who are within specific categories defined by
+              law as inadmissible to the United States (except when a waiver is
+              obtained in advance). Are any of the following applicable to you?
+              While a YES answer does not automatically signify ineligibility
+              for a visa, if you answer YES you may be required to personally
+              appear before a consular officer.
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever been arrested or convicted for any offense or
+                crime, even though subject of a pardon, amnesty, or other
+                similar action?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="crime-doer-yes"
+                    type="radio"
+                    name="crime-doer"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="crime-doer-no"
+                    type="radio"
+                    name="crime-doer"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="crime-doer-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever violated, or engaged in a conspiracy to violate,
+                any law relating to controlled substances?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="violation-yes"
+                    type="radio"
+                    name="violation"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="violation-no"
+                    type="radio"
+                    name="violation"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="violation-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Are you coming to the United States to engage in prostitution or
+                unlawful commercialized vice or have you been engaged in
+                prostitution or procuring prostitutes within the past 10 years?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="unlawful-act-yes"
+                    type="radio"
+                    name="unlawful-act"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="unlawful-act-no"
+                    type="radio"
+                    name="unlawful-act"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="unlawful-act-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever been involved in, or do you seek to engage in,
+                money laundering?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="money-laundering"
+                    type="radio"
+                    name="money-laundering"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="money-laundering-no"
+                    type="radio"
+                    name="money-laundering"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="money-laundering-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever committed or conspired to commit a human
+                trafficking offense in the United States or outside the United
+                States?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="human-trafficking-yes"
+                    type="radio"
+                    name="human-trafficking"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="human-trafficking-no"
+                    type="radio"
+                    name="human-trafficking"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="human-trafficking-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever knowingly aided, abetted, assisted or colluded
+                with an individual who has committed, or conspired to commit a
+                severe human trafficking offense in the United States or outside
+                the United States?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="criminal-yes"
+                    type="radio"
+                    name="criminal"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="criminal-no"
+                    type="radio"
+                    name="criminal"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="criminal-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Are you the spouse, son, or daughter of an individual who has
+                committed or conspired to commit a human trafficking offense in
+                the United States or outside the United States and have you
+                within the last five years, knowingly benefited from the
+                trafficking activities?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="criminal-daughter-yes"
+                    type="radio"
+                    name="criminal-daughter"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="criminal-daughter-no"
+                    type="radio"
+                    name="criminal-daughter"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="criminal-daughter-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+          </div>
+          <div
+            id="step-security-part3"
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-4">
+              Security and Backgroud information:Part3
+            </h1>
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong>Provide the following security and
+              background information. Provide complete and accurate information
+              to all questions that require an explanation. A visa may not be
+              issued to persons who are within specific categories defined by
+              law as inadmissible to the United States (except when a waiver is
+              obtained in advance). Are any of the following applicable to you?
+              While a YES answer does not automatically signify ineligibility
+              for a visa, if you answer YES you may be required to personally
+              appear before a consular officer.
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Do you seek to engage in espionage, sabotage, export control
+                violations, or any other illegal activity while in the United
+                States?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="sabotage-yes"
+                    type="radio"
+                    name="sabotage"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="sabotage-no"
+                    type="radio"
+                    name="sabotage"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="sabotage-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Do you seek to engage in terrorist activities while in the
+                United States or have you ever engaged in terrorist activities?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="terrorist-activities-yes"
+                    type="radio"
+                    name="terrorist-activities"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="terrorist-activities-no"
+                    type="radio"
+                    name="terrorist-activities"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="terrorist-activities-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever or do you intend to provide financial assistance
+                or other support to terrorists or terrorist organizations?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="terrorist-organizations-yes"
+                    type="radio"
+                    name="terrorist-organizations"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="terrorist-organizations-no"
+                    type="radio"
+                    name="terrorist-organizations"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="terrorist-organizations-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Are you a member or representative of a terrorist organization?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="representative-yes"
+                    type="radio"
+                    name="representative"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="representative-no"
+                    type="radio"
+                    name="representative"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="representative-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Are you the spouse, son, or daughter of an individual who has
+                engaged in terrorist activity, including providing financial
+                assistance or other support to terrorists or terrorist
+                organizations, in the last five years?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy1-yes" type="radio" name="dumy1" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy1-no" type="radio" name="dumy1" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo1-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you ever ordered, incited, committed, assisted, or
+                otherwise participated in genocide?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy2-yes" type="radio" name="dumy2" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy2-no" type="radio" name="dumy2" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo2-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you ever committed, ordered, incited, assisted, or
+                otherwise participated in torture?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy3-yes" type="radio" name="dumy3" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy3-no" type="radio" name="dumy3" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo3-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you committed, ordered, incited, assisted, or otherwise
+                participated in extrajudicial killings, political killings, or
+                other acts of violence?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy4-yes" type="radio" name="dumy4" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy4-no" type="radio" name="dumy4" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo4-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you ever engaged in the recruitment or the use of child
+                soldiers?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy5-yes" type="radio" name="dumy5" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy5-no" type="radio" name="dumy5" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo5-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you, while serving as a government official, been
+                responsible for or directly carried out, at any time,
+                particularly severe violations of religious freedom?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy6-yes" type="radio" name="dumy6" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy6-no" type="radio" name="dumy6" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo6-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you ever been directly involved in the establishment or
+                enforcement of population controls forcing a woman to undergo an
+                abortion against her free choice or a man or a woman to undergo
+                sterilization against his or her free will?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy7-yes" type="radio" name="dumy7" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy7-no" type="radio" name="dumy7" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo7-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1"
+                >Have you ever been directly involved in the coercive
+                transplantation of human organs or bodily tissue?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input id="dumy8-yes" type="radio" name="dumy8" value="yes" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input id="dumy8-no" type="radio" name="dumy8" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="demo8-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+          </div>
+          <div
+            id="step-security-part4"
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-4">
+              Security and Backgroud information:part4
+            </h1>
+
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong>Provide the following security and
+              background information. Provide complete and accurate information
+              to all questions that require an explanation. A visa may not be
+              issued to persons who are within specific categories defined by
+              law as inadmissible to the United States (except when a waiver is
+              obtained in advance). Are any of the following applicable to you?
+              While a YES answer does not automatically signify ineligibility
+              for a visa, if you answer YES you may be required to personally
+              appear before a consular officer.
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever sought to obtain or assist others to obtain a
+                visa, entry into the United States, or any other United States
+                immigration benefit by fraud or willful misrepresentation or
+                other unlawful means?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="fraud-visa-yes"
+                    type="radio"
+                    name="fraud-visa"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="fraud-visa"
+                    type="radio"
+                    name="fraud-visa"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="fraud-visa-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever been removed or deported from any country?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="deportion-yes"
+                    type="radio"
+                    name="deportion"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="deportion-no"
+                    type="radio"
+                    name="deportion"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="deportion-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+          </div>
+          <div
+            id="step-security-part5"
+            class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white"
+          >
+            <h1 class="font-semibold text-lg mb-4">
+              Security and Backgroud information:part5
+            </h1>
+
+            <div
+              class="border border-gray-400 bg-gray-50 p-4 rounded-md text-sm text-gray-700 mb-6"
+            >
+              <strong>NOTE:</strong>Provide the following security and
+              background information. Provide complete and accurate information
+              to all questions that require an explanation. A visa may not be
+              issued to persons who are within specific categories defined by
+              law as inadmissible to the United States (except when a waiver is
+              obtained in advance). Are any of the following applicable to you?
+              While a YES answer does not automatically signify ineligibility
+              for a visa, if you answer YES you may be required to personally
+              appear before a consular officer.
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever withheld custody of a U.S. citizen child outside
+                the United States from a person granted legal custody by a U.S.
+                court?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="citizer-child-yes"
+                    type="radio"
+                    name="citizer-child"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="citizer-child"
+                    type="radio"
+                    name="citizer-child"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="citizer-child-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you voted in the United States in violation of any law or
+                regulation?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="vote-violation-yes"
+                    type="radio"
+                    name="vote-violation"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="vote-violation-no"
+                    type="radio"
+                    name="vote-violation"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="vote-violation-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block font-semibold mb-1">
+                Have you ever renounced United States citizenship for the
+                purposes of avoiding taxation?
+              </label>
+              <div class="flex space-x-6">
+                <label class="flex items-center gap-2">
+                  <input
+                    id="avoiding-taxation-yes"
+                    type="radio"
+                    name="avoiding-taxation"
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2">
+                  <input
+                    id="avoiding-taxation-no"
+                    type="radio"
+                    name="avoiding-taxation"
+                    value="no"
+                  />
+                  No
+                </label>
+              </div>
+            </div>
+            <div
+              id="avoiding-taxation-details"
+              class="mt-4 hidden border border-gray-300 p-4 rounded-md bg-gray-50"
+            >
+              <label class="block font-semibold mb-1">Explain:</label>
+              <textarea
+                rows="4"
+                class="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="Provide explanation here..."
+              ></textarea>
+            </div> 
+          </div>
+          <div
+           id="step-photo" class="photo-upload-section p-6 bg-white rounded-xl shadow-lg text-center max-w-md mx-auto mt-10 hidden">
+  <h2 class="text-2xl font-bold mb-4 text-gray-800">Important Notice</h2>
+  <p class="mb-4 text-gray-600">
+    Starting <strong>November 1, 2016</strong>, eye glasses will <strong>no longer be allowed</strong> in new visa photos.
+  </p>
+  <p class="mb-6 text-gray-500">
+    Click the button below to upload your photo. It will be automatically cropped and resized to meet visa requirements.
+  </p>
+
+  <button id="uploadBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:scale-105">
+    📸 Upload Your Photo
+  </button>
+
+  <input type="file" id="photoInput" accept="image/*" class="hidden">
+
+  <div id="previewContainer" class="mt-6 hidden">
+    <p class="font-semibold mb-2 text-gray-700">Preview (Resized to 200x200px):</p>
+    <canvas id="photoCanvas" class="mx-auto rounded-md border border-gray-300"></canvas>
+  </div>
+</div>
+
+<!-- Move the popup OUTSIDE step-photo -->
+<div id="errorPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+  <div class="bg-blue-600 text-white rounded-xl p-6 max-w-sm w-full text-center shadow-lg animate-slide-in">
+    <h3 class="text-lg font-bold mb-2">⚠️ Upload Error</h3>
+    <p id="errorPopupMsg">You are trying to upload the same image again!</p>
+    <button id="closePopup" class="mt-4 bg-white text-red-600 font-semibold px-4 py-2 rounded-lg hover:bg-gray-200 transition">
+      Close
+    </button>
+  </div>
+</div>
+
+
+<!-- Sign & Submit Section -->
+<div id="step-sign" class="form-step hidden mt-10 max-w-3xl mx-auto p-6 border border-gray-400 rounded-lg shadow-md bg-white">
+  <h2 class="font-semibold text-lg mb-4">Sign and Submit Application</h2>
+
+  <div class="bg-yellow-50 border border-yellow-400 p-4 rounded mb-6 text-sm text-gray-800">
+    <strong>Important:</strong> By clicking "Sign and Submit Application," you are electronically signing your DS-160 application. 
+    This certifies that you have read and understood all the questions, and that your answers are true and correct to the best of your knowledge.
+  </div>
+
+  <div class="mb-6">
+    <label for="signature-fullname" class="font-semibold block mb-2">
+      Enter Your Full Name (as in your passport) to Sign:
+    </label>
+    <input
+      type="text"
+      id="signature-fullname"
+      name="signature-fullname"
+      class="w-full border rounded px-3 py-2"
+      placeholder="e.g., JUAN MIGUEL FERNANDEZ"
+      required
+    />
+  </div>
+
+  <div class="mb-6">
+    <label for="signature-passport" class="font-semibold block mb-2">
+      Passport Number:
+    </label>
+    <input
+      type="text"
+      id="signature-passport"
+      name="signature-passport"
+      class="w-full border rounded px-3 py-2"
+      placeholder="Enter your passport number"
+      required
+    />
+  </div>
+
+
+</div>
+
+<div id="step-review" class="form-step hidden">
+  <h2 class="text-2xl font-bold text-indigo-700 mb-4 text-center">Review Application</h2>
+
+  <!-- Review Data -->
+  <div id="reviewContent" class="bg-white p-4 rounded-lg shadow border">
+    <!-- Data will be inserted dynamically by JS -->
+  </div>
+
+  <!-- Buttons -->
+  <div class="mt-6 flex justify-center space-x-4">
+    <button id="printReviewBtn" type="button" 
+      class="px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+      Print Review
+    </button>
+    <!-- <button id="submitReviewBtn" type="submit" 
+      class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+      Submit Application
+    </button> -->
+    <button id="submitReviewBtn" type="button" 
+        class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 
+               font-medium transition-colors duration-200">
+  Review
+</button>
+
+  </div>
+</div>
+ <div id="review-popup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+    <h3 class="text-lg font-semibold mb-4">Where do you want to go?</h3>
+    <p class="text-sm text-gray-700 mb-6">
+      You just edited a section. Would you like to return to the Review page or continue filling out the form?
+    </p>
+    <div class="flex justify-end gap-3">
+      <button id="popup-review-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+        Go to Review
+      </button>
+      <button id="popup-continue-btn" class="bg-gray-300 hover:bg-gray-400 text-black px-4 py-2 rounded">
+        Continue
+      </button>
+    </div>
+  </div>
+</div>
+      <div
+      class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8"
+    >
+      <button
+  id="prev-btn"   
+  class="flex items-center gap-2 bg-gray-300 text-black py-2 px-4 rounded hover:bg-gray-400 hidden"
+>
+  <i class="bi bi-arrow-left"></i>
+  Back: Personal 1
+</button>
+
+
+<button
+type="submit"
+  id="next-btn"  
+  class="flex items-center gap-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+>
+  Next: Personal 2
+  <i class="bi bi-arrow-right"></i>
+</button>
+
+    </div>
+        </main>
+        </form>
+      </div>
+    </div>
+   
+    
+  </body>
+</html>

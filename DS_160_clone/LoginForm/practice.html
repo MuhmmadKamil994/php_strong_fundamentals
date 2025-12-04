@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+         <form action="save_personal1.php"
+           id="step-personal-1" class="form-step space-y-6 hidden">
+            <h2 class="font-semibold text-sm">Personal Information 1</h2>
+            <!-- Existing Personal 1 Form Fields -->
+            <div class="mb-4">
+              <div>
+                <label for="surnames" class="font-semibold"
+                  >Surnames:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Enter all surnames as listed in your passport. If only one name is listed in your passport, enter that Surname."
+                    >ℹ️</span
+                  >
+                </label>
+                <input
+                  type="text"
+                  id="surnames"
+                  name="surnames"
+                  class="w-full border rounded px-3 py-2 mt-1"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="given-names"
+                  class="font-semibold flex items-center gap-2"
+                  >Given Names:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="If your passport does not include a given name, please enter 'FNU' in Given Names."
+                    >ℹ️</span
+                  >
+                </label>
+                <input
+                  type="text"
+                  id="given-names"
+                  name="given-names"
+                  class="w-full border rounded px-3 py-2 mt-1"
+                  required
+                />
+                <span class="text-gray-500 text-xs">(e.g., JUAN MIGUEL)</span>
+              </div>
+
+              <div class="state-toggle-block">
+                <div class="mb-2">
+                  <label class="font-semibold block mb-1"
+                    >Full Name in Native Alphabet:</label
+                  >
+                  <input
+                  id="native-alphabet"
+                  name="native-alphabet"
+                    type="text"
+                    class="w-full border rounded px-3 py-2 state-input"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply/Technology Not Available</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="block font-semibold mb-1"
+                  >Have you ever used other names?</label
+                >
+                <div class="flex space-x-4">
+                  <label
+                    ><input
+                      type="radio"
+                      name="other-names"
+                      value="yes"
+                      required
+                    />
+                    Yes</label
+                  >
+                  <label
+                    ><input type="radio" name="other-names" value="no" />
+                    No</label
+                  >
+                </div>
+              </div>
+
+              <div id="other-names-container" class="hidden">
+                <div id="name-fields-wrapper"></div>
+                <button
+                  type="button"
+                  id="add-name-btn"
+                  class="btn btn-primary mt-2"
+                >
+                  Add Another
+                </button>
+              </div>
+
+              <div class="mb-4">
+                <label class="block font-semibold mb-1"
+                  >Do you have Telecode names?</label
+                >
+                <div class="flex space-x-4">
+                  <label
+                    ><input
+                      type="radio"
+                      name="telecode-names"
+                      value="yes"
+                      required
+                    />
+                    Yes</label
+                  >
+                  <label
+                    ><input type="radio" name="telecode-names" value="no" />
+                    No</label
+                  >
+                </div>
+              </div>
+
+              <div id="telecode-fields" class="hidden mt-3">
+                <div class="mb-2">
+                  <label class="block text-xs">Telecode Surnames</label>
+                  <input
+                  name="telecodeS"
+                    type="text"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label class="block text-xs">Telecode Given Names</label>
+                  <input
+                  name="telecodeG"
+                    type="text"
+                    class="form-control form-control-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="sex" class="font-semibold mb-1 block"
+                  >Sex:<span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Please select MALE or FEMALE"
+                    >ℹ️</span
+                  >
+                </label>
+                <select
+                  id="sex"
+                  required
+                  name="sex"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option>Select One</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="marital-status" class="font-semibold mb-1 block"
+                  >Marital Status:</label
+                >
+                <select
+                  id="marital-status"
+                  required
+                  name="marital-status"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option>Select One</option>
+                  <option>Married</option>
+                  <option>Single</option>
+                  <option>Divorced</option>
+                  <option>Widowed</option>
+                  <option>Others</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="font-semibold flex items-center gap-2"
+                  >Date of Birth:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="If day or month is unknown, enter as shown in passport."
+                    >ℹ️</span
+                  >
+                </label>
+                    <input type="date" name="dooob" id="dooob" placeholder="Date of Birth" required
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+    
+              </div>
+
+              <div>
+                <label for="birth-city" class="font-semibold mb-1 block"
+                  >City:</label
+                >
+                <input
+                  type="text"
+                  id="birth-city"
+                  name="birth-city"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                />
+              </div>
+
+              <div class="state-toggle-block">
+                <div class="mb-2">
+                  <label class="font-semibold block mb-1">State/Province</label>
+                  <input
+                    type="text"
+                    name="state"
+                    class="w-full border rounded px-3 py-2 state-input"
+                    required
+                  />
+                  <div class="flex items-center gap-2 text-sm mt-1">
+                    <input type="checkbox" class="state-toggle-checkbox" />
+                    <label>Does Not Apply</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="birth-country" class="font-semibold mb-1 block"
+                  >Country/Region:
+                  <span
+                    class="text-blue-600 cursor-pointer"
+                    data-bs-toggle="tooltip"
+                    title="Select the name that is currently in use for the place where you were born."
+                    >ℹ️</span
+                  >
+                </label>
+                <select
+                  id="birth-country"
+                  name="birth-country"
+                  class="w-full border rounded px-3 py-2"
+                  required
+                >
+                  <option>Select One</option>
+                </select>
+              </div>
+            </div>
+            <footer class="mt-10 border-t border-gray-300 pt-6">
+              <!-- Existing Footer Content -->
+              <div
+                class="bg-gray-50 border border-gray-300 p-4 rounded mb-6 text-xs leading-relaxed"
+              >
+                <p>
+                  Public reporting burden for this collection of information is
+                  estimated to average <strong>90 minutes per response</strong>,
+                  including time required for searching existing data sources,
+                  gathering the necessary documentation, providing the
+                  information and/or documents required, and reviewing the final
+                  collection. You do not have to supply this information unless
+                  this collection displays a currently valid OMB control number.
+                </p>
+                <p class="mt-2">
+                  If you have comments on the accuracy of this burden estimate
+                  and/or recommendations for reducing it, please send them to:
+                  <a
+                    href="mailto:PRA_BurdenComments@state.gov"
+                    class="text-blue-600 underline"
+                    >PRA_BurdenComments@state.gov</a
+                  >
+                </p>
+              </div>
+
+              <div
+                class="bg-gray-50 border border-gray-300 p-4 rounded mb-6 text-xs leading-relaxed"
+              >
+                <h5 class="font-semibold mb-2">Confidentiality Statement</h5>
+                <p>
+                  The information asked for on this form is requested pursuant
+                  to Section 222 of the Immigration and Nationality Act. INA
+                  Section 222(f) provides that the records of the Department of
+                  State and of diplomatic and consular offices of the United
+                  States pertaining to the issuance and refusal of visas or
+                  permits to enter the United States shall be considered
+                  confidential and shall be used only for the formulation,
+                  amendment, administration, or enforcement of the immigration,
+                  nationality, and other laws of the United States.
+                </p>
+                <p class="mt-2">
+                  Certified copies of such records may be made available to a
+                  court provided the court certifies that the information
+                  contained in such records is needed in a case pending before
+                  the court.
+                </p>
+              </div>
+            </footer>
+            
+
+          </form>
+</body>
+</html>

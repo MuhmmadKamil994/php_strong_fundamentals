@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-box, .form-box {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #f0f0f0;
+}
+input, select, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
+.sidebar {
+    width: 200px;
+    background: #2c3e50;
+    color: #fff;
+    height: 100vh;
+    float: left;
+    padding-top: 20px;
+}
+.sidebar h2 {
+    text-align: center;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar li {
+    padding: 10px;
+    text-align: center;
+}
+.sidebar li a {
+    color: white;
+    text-decoration: none;
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}

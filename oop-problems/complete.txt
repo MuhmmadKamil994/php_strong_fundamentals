@@ -1,0 +1,330 @@
+🟢 1. PHP Basics
+🔹 Introduction
+PHP (Hypertext Preprocessor) is a server-side scripting language used to build dynamic web pages.
+🔹 Syntax Example
+<?php
+echo "Hello, World!";
+?>
+🔹 Variables
+Start with $ sign.
+Case-sensitive.
+Dynamic typing.
+$name = "Kamil";
+$age = 25;
+$isActive = true;
+echo "$name is $age years old.";
+🔹 Constants
+define("SITE_NAME", "MyWebsite");
+const VERSION = 1.0;
+echo SITE_NAME;
+🔹 Data Types
+String
+Integer
+Float
+Boolean
+Array
+Object
+NULL
+🔹 Operators
+$a = 10;
+$b = 3;
+echo $a + $b; // Arithmetic
+echo $a > $b ? "A is greater" : "B is greater"; // Ternary
+🟡 2. Control Structures
+🔹 Conditional Statements
+$score = 85;
+if ($score >= 90) {
+    echo "Grade: A";
+} elseif ($score >= 75) {
+    echo "Grade: B";
+} else {
+    echo "Grade: C";
+}
+🔹 Switch
+$role = 'admin';
+switch ($role) {
+    case 'admin':
+        echo "Access: Full";
+        break;
+    case 'editor':
+        echo "Access: Partial";
+        break;
+    default:
+        echo "Access: Read only";
+}
+🔹 Loops
+for ($i = 1; $i <= 5; $i++) {
+    echo "$i ";
+}
+$colors = ["red", "green", "blue"];
+foreach ($colors as $color) {
+    echo $color;
+}
+🟣 3. Functions
+🔹 Basic Function
+function greet($name) {
+    return "Hello, $name!";
+}
+echo greet("Kamil");
+🔹 Default & Variadic Parameters
+function add($a, $b = 0) {
+    return $a + $b;
+}
+function sumAll(...$nums) {
+    return array_sum($nums);
+}
+🔹 Static Variables
+function counter() {
+    static $count = 0;
+    $count++;
+    return $count;
+}
+echo counter(); // 1
+echo counter(); // 2
+🔹 Anonymous Functions
+$double = function($n) {
+    return $n * 2;
+};
+echo $double(5);
+🔵 4. Arrays
+🔹 Indexed Array
+$fruits = ["Apple", "Banana", "Orange"];
+echo $fruits[1];
+🔹 Associative Array
+$user = ["name" => "Kamil", "age" => 25];
+echo $user["name"];
+🔹 Multidimensional Array
+$students = [
+    ["Ali", 90],
+    ["Sara", 85]
+];
+echo $students[1][0]; // Sara
+🔹 Array Functions
+$arr = [1, 2, 3];
+array_push($arr, 4);
+$filtered = array_filter($arr, fn($n) => $n > 2);
+print_r($filtered);
+🟠 5. Strings
+🔹 Concatenation & Interpolation
+$name = "Kamil";
+echo "Hello $name";
+echo 'Hello ' . $name;
+🔹 Useful Functions
+$str = " Hello World ";
+echo trim($str);
+echo strtoupper($str);
+echo substr($str, 1, 5);
+🔹 String Formatting
+printf("Price: %.2f", 123.456);
+🔹 Regular Expressions
+if (preg_match("/^[A-Za-z]+$/", "Name")) {
+    echo "Valid string";
+}
+🟢 6. Superglobals
+🔹 Common Superglobals
+Variable	Description
+$_GET	URL query parameters
+$_POST	Form data
+$_SERVER	Server info
+$_FILES	Uploaded files
+$_SESSION	Session variables
+$_COOKIE	Cookies
+$_ENV	Environment variables
+🔹 Example: GET Data
+$name = $_GET["name"] ?? "Guest";
+echo "Hello, $name";
+🔹 Example: File Upload
+if (isset($_FILES["avatar"])) {
+    $tmp = $_FILES["avatar"]["tmp_name"];
+    move_uploaded_file($tmp, "uploads/" . $_FILES["avatar"]["name"]);
+}
+🔹 Sessions
+session_start();
+$_SESSION["user"] = "Kamil";
+echo $_SESSION["user"];
+🟡 7. Forms and User Input
+🔹 HTML Form
+<form action="submit.php" method="POST">
+    <input name="email" type="email">
+    <button>Submit</button>
+</form>
+🔹 PHP Processing (submit.php)
+$email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+if (!$email) {
+    echo "Invalid Email";
+} else {
+    echo "Email: $email";
+}
+🔹 Sanitization Example
+$name = htmlspecialchars($_POST["name"] ?? "", ENT_QUOTES, "UTF-8");
+🟣 8. Working with Files
+🔹 Read File
+$content = file_get_contents("test.txt");
+echo $content;
+🔹 Write File
+file_put_contents("log.txt", "New entry\n", FILE_APPEND);
+🔹 fopen() Example
+$file = fopen("data.txt", "r");
+while (!feof($file)) {
+    echo fgets($file);
+}
+fclose($file);
+🔹 File Info
+if (file_exists("data.txt")) {
+    echo filesize("data.txt") . " bytes";
+}
+🔵 9. PHP and Web
+🔹 Embedding PHP in HTML
+<!DOCTYPE html>
+<html>
+<body>
+    <h1><?php echo "Welcome, " . htmlspecialchars($_GET["name"] ?? "Guest"); ?></h1>
+</body>
+</html>
+🔹 Headers & Redirects
+header("Location: login.php");
+exit;
+🔹 JSON Handling
+$data = ["status" => "ok"];
+header("Content-Type: application/json");
+echo json_encode($data);
+🔹 AJAX Example
+client.js
+fetch("server.php", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name: "Kamil" })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+server.php
+$body = json_decode(file_get_contents("php://input"), true);
+echo json_encode(["msg" => "Hello " . $body["name"]]);
+🟢 10. Object-Oriented Programming (OOP)
+🔹 Class and Object
+class Car {
+    public $brand;
+    public function start() {
+        echo "$this->brand is starting!";
+    }
+}
+$car = new Car();
+$car->brand = "Toyota";
+$car->start();
+🔹 Constructor & Destructor
+class User {
+    public function __construct($name) {
+        echo "User $name created.<br>";
+    }
+    public function __destruct() {
+        echo "User destroyed.<br>";
+    }
+}
+$user = new User("Kamil");
+🔹 Access Modifiers
+class Bank {
+    private $balance = 0;
+    public function deposit($amount) {
+        $this->balance += $amount;
+    }
+    public function getBalance() {
+        return $this->balance;
+    }
+}
+$acc = new Bank();
+$acc->deposit(100);
+echo $acc->getBalance();
+🔹 Inheritance
+class Vehicle {
+    public function start() {
+        echo "Vehicle started.";
+    }
+}
+class Car extends Vehicle {
+    public function honk() {
+        echo "Beep!";
+    }
+}
+$car = new Car();
+$car->start();
+$car->honk();
+🔹 Method Overriding
+class Animal {
+    public function sound() {
+        echo "Some sound";
+    }
+}
+class Dog extends Animal {
+    public function sound() {
+        echo "Woof!";
+    }
+}
+$dog = new Dog();
+$dog->sound();
+🔹 Static Properties & Methods
+class Math {
+    public static $pi = 3.14;
+    public static function square($n) {
+        return $n * $n;
+    }
+}
+echo Math::$pi;
+echo Math::square(5);
+🔹 Abstract Class
+abstract class Shape {
+    abstract public function area();
+}
+class Circle extends Shape {
+    private $r;
+    public function __construct($r) { $this->r = $r; }
+    public function area() { return pi() * $this->r ** 2; }
+}
+echo (new Circle(3))->area();
+🔹 Interface
+interface Logger {
+    public function log($msg);
+}
+class FileLogger implements Logger {
+    public function log($msg) {
+        echo "Log: $msg";
+    }
+}
+(new FileLogger())->log("Success");
+🔹 Trait
+trait Loggable {
+    public function log($msg) {
+        echo "[LOG]: $msg";
+    }
+}
+class Product {
+    use Loggable;
+}
+$p = new Product();
+$p->log("Product created");
+🔹 Magic Methods
+class Demo {
+    private $data = [];
+    public function __set($name, $value) {
+        $this->data[$name] = $value;
+    }
+    public function __get($name) {
+        return $this->data[$name] ?? null;
+    }
+    public function __toString() {
+        return json_encode($this->data);
+    }
+}
+$d = new Demo();
+$d->name = "Kamil";
+echo $d;
+🔹 Namespace
+namespace App\Models;
+class User {
+    public function hello() {
+        echo "Hello from App\Models\User";
+    }
+}
+🔹 Autoloading
+spl_autoload_register(function($class) {
+    include $class . ".php";
+});
